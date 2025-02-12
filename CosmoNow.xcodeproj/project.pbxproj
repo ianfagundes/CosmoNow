@@ -27,6 +27,15 @@
 		14BC16372D5D3B0200FF45A4 /* CosmoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16472D5D3B0400FF45A4 /* CosmoNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16512D5D3B0400FF45A4 /* CosmoNowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BC166A2D5D3CA000FF45A4 /* CosmoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoModel.swift; sourceTree = "<group>"; };
+		14BC166B2D5D3CD600FF45A4 /* CosmoRespositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoRespositoryProtocol.swift; sourceTree = "<group>"; };
+		14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCosmoUseCase.swift; sourceTree = "<group>"; };
+		14BC166D2D5D3DC200FF45A4 /* CosmoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoRepository.swift; sourceTree = "<group>"; };
+		14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoService.swift; sourceTree = "<group>"; };
+		14BC166F2D5D3DE900FF45A4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		14BC16702D5D3E1300FF45A4 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoViewModel.swift; sourceTree = "<group>"; };
+		14BC16722D5D3E4500FF45A4 /* CosmoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +84,11 @@
 		14BC162E2D5D3B0200FF45A4 = {
 			isa = PBXGroup;
 			children = (
+				14BC16682D5D3B5800FF45A4 /* Resources */,
+				14BC16672D5D3B4E00FF45A4 /* Infra */,
+				14BC16662D5D3B4600FF45A4 /* Data */,
+				14BC16652D5D3B3800FF45A4 /* Domain */,
+				14BC16642D5D3B2700FF45A4 /* Presentation */,
 				14BC16392D5D3B0200FF45A4 /* CosmoNow */,
 				14BC164A2D5D3B0400FF45A4 /* CosmoNowTests */,
 				14BC16542D5D3B0400FF45A4 /* CosmoNowUITests */,
@@ -90,6 +104,50 @@
 				14BC16512D5D3B0400FF45A4 /* CosmoNowUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		14BC16642D5D3B2700FF45A4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				14BC16722D5D3E4500FF45A4 /* CosmoView.swift */,
+				14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		14BC16652D5D3B3800FF45A4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */,
+				14BC166B2D5D3CD600FF45A4 /* CosmoRespositoryProtocol.swift */,
+				14BC166A2D5D3CA000FF45A4 /* CosmoModel.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		14BC16662D5D3B4600FF45A4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */,
+				14BC166D2D5D3DC200FF45A4 /* CosmoRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		14BC16672D5D3B4E00FF45A4 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				14BC16702D5D3E1300FF45A4 /* LocalStorage.swift */,
+				14BC166F2D5D3DE900FF45A4 /* NetworkManager.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		14BC16682D5D3B5800FF45A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
