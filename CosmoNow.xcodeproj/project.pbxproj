@@ -6,6 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */; };
+		14BC16942D5D5D0100FF45A4 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16702D5D3E1300FF45A4 /* LocalStorage.swift */; };
+		14BC16952D5D5D0800FF45A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166F2D5D3DE900FF45A4 /* NetworkManager.swift */; };
+		14BC16962D5D5D1200FF45A4 /* CosmoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166D2D5D3DC200FF45A4 /* CosmoRepository.swift */; };
+		14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */; };
+		14BC16982D5D5D1F00FF45A4 /* CosmoRespositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166B2D5D3CD600FF45A4 /* CosmoRespositoryProtocol.swift */; };
+		14BC16992D5D5D2600FF45A4 /* CosmoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166A2D5D3CA000FF45A4 /* CosmoModel.swift */; };
+		14BC169A2D5D5D2C00FF45A4 /* CosmoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16722D5D3E4500FF45A4 /* CosmoView.swift */; };
+		14BC169B2D5D5D3200FF45A4 /* CosmoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		14BC16482D5D3B0400FF45A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -294,6 +306,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14BC16992D5D5D2600FF45A4 /* CosmoModel.swift in Sources */,
+				14BC16942D5D5D0100FF45A4 /* LocalStorage.swift in Sources */,
+				14BC169B2D5D5D3200FF45A4 /* CosmoViewModel.swift in Sources */,
+				14BC16952D5D5D0800FF45A4 /* NetworkManager.swift in Sources */,
+				14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */,
+				14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */,
+				14BC16962D5D5D1200FF45A4 /* CosmoRepository.swift in Sources */,
+				14BC169A2D5D5D2C00FF45A4 /* CosmoView.swift in Sources */,
+				14BC16982D5D5D1F00FF45A4 /* CosmoRespositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +491,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianfagundes.CosmoNow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -499,7 +520,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianfagundes.CosmoNow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
