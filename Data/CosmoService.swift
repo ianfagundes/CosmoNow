@@ -8,15 +8,11 @@
 import Foundation
 
 class CosmoService {
-    private let baseURL: URL
+    private let baseURL: URL = URL(string: "https://api.nasa.gov/planetary/apod")!
     private let apikey: String = "c0cfC2fB8BG5hFkAu8x3bHkw2oUzE8xha4RDpfWC"
 
-    init(baseURL: URL = URL(string: "https://api.nasa.gov/planetary/apod")!) {
-        self.base
-    }
-
     func fetchCosmo(for date: String? = nil) async throws -> CosmoModel {
-        var urlComponents = URLComponents(url: baseURL)!
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         urlComponents.queryItems = [
             URLQueryItem(name: "api_key", value: apikey),
         ]
