@@ -8,7 +8,7 @@
 import Foundation
 
 struct CosmoModel: Codable, Identifiable {
-    let id: String { date }
+    var id: String { date }
     let date: String
     let explanation: String
     let hdurl: String?
