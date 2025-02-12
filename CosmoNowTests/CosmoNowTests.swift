@@ -5,13 +5,27 @@
 //  Created by Ian Fagundes on 12/02/25.
 //
 
-import Testing
 @testable import CosmoNow
+import XCTest
 
-struct CosmoNowTests {
+final class CosmoNowTests: XCTestCase {
+    var service: CosmoService!
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    override func setUp() {
+        super.setUp()
+        service = CosmoService()
     }
 
+    func testFetchCosmo() async throws {
+        do {
+            let cosmo = try await service.fetchCosmo()
+            XCTAssertNotNil(cosmo, "Cosmo não deve ser nulo")
+            XCTAssertFalse(cosmo.title.isEmpty, "O título não ser vazio.")
+            XCTAssertFalse(cosmo.url.isEmpty, "A URL não pode ser vazia.")
+
+            print("### teste ok \(cosmo)")
+        } catch {
+            XCTFail("Erro ao buscar dados: \(error.localizedDescription)")
+        }
+    }
 }
