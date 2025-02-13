@@ -12,6 +12,9 @@
 		1452F1252D5E3770002E97FD /* CosmoUseCaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452F1242D5E3767002E97FD /* CosmoUseCaseModel.swift */; };
 		1452F1272D5E3FF6002E97FD /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452F1262D5E3FF2002E97FD /* MediaView.swift */; };
 		1452F12D2D5E6294002E97FD /* YouTubeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452F12C2D5E6289002E97FD /* YouTubeWebView.swift */; };
+		1452F1302D5E6BA3002E97FD /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452F12F2D5E6BA3002E97FD /* ImageCacheManager.swift */; };
+		1452F1322D5E6C88002E97FD /* DataCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452F1312D5E6C88002E97FD /* DataCacheManager.swift */; };
+		1452F1342D5E8150002E97FD /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1452F1332D5E8149002E97FD /* CachedAsyncImage.swift */; };
 		14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */; };
 		14BC16942D5D5D0100FF45A4 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16702D5D3E1300FF45A4 /* LocalStorage.swift */; };
 		14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */; };
@@ -47,6 +50,9 @@
 		1452F1242D5E3767002E97FD /* CosmoUseCaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoUseCaseModel.swift; sourceTree = "<group>"; };
 		1452F1262D5E3FF2002E97FD /* MediaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
 		1452F12C2D5E6289002E97FD /* YouTubeWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeWebView.swift; sourceTree = "<group>"; };
+		1452F12F2D5E6BA3002E97FD /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		1452F1312D5E6C88002E97FD /* DataCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheManager.swift; sourceTree = "<group>"; };
+		1452F1332D5E8149002E97FD /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		14BC16372D5D3B0200FF45A4 /* CosmoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16472D5D3B0400FF45A4 /* CosmoNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16512D5D3B0400FF45A4 /* CosmoNowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,10 +201,20 @@
 		1452F1292D5E626A002E97FD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1452F1332D5E8149002E97FD /* CachedAsyncImage.swift */,
 				1452F12C2D5E6289002E97FD /* YouTubeWebView.swift */,
 				1452F1262D5E3FF2002E97FD /* MediaView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		1452F12E2D5E6B8D002E97FD /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				1452F12F2D5E6BA3002E97FD /* ImageCacheManager.swift */,
+				1452F1312D5E6C88002E97FD /* DataCacheManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		14BC162E2D5D3B0200FF45A4 = {
@@ -257,6 +273,7 @@
 		14BC16672D5D3B4E00FF45A4 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				1452F12E2D5E6B8D002E97FD /* Cache */,
 				1452F1212D5E3507002E97FD /* Media */,
 				14BC16D22D5DA4C500FF45A4 /* Storage */,
 				14BC16D12D5DA4B800FF45A4 /* Network */,
@@ -445,8 +462,10 @@
 				1452F1232D5E351F002E97FD /* MediaManager.swift in Sources */,
 				14BC169D2D5D637B00FF45A4 /* CosmoServiceProtocol.swift in Sources */,
 				14BC16942D5D5D0100FF45A4 /* LocalStorage.swift in Sources */,
+				1452F1322D5E6C88002E97FD /* DataCacheManager.swift in Sources */,
 				14BC16A22D5D902200FF45A4 /* GetCosmoUseCaseProtocol.swift in Sources */,
 				14BC169B2D5D5D3200FF45A4 /* CosmoViewModel.swift in Sources */,
+				1452F1342D5E8150002E97FD /* CachedAsyncImage.swift in Sources */,
 				14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */,
 				14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */,
 				1452F12D2D5E6294002E97FD /* YouTubeWebView.swift in Sources */,
@@ -454,6 +473,7 @@
 				14BC16D82D5DACCD00FF45A4 /* DateUtils.swift in Sources */,
 				14BC169A2D5D5D2C00FF45A4 /* CosmoView.swift in Sources */,
 				1452F1252D5E3770002E97FD /* CosmoUseCaseModel.swift in Sources */,
+				1452F1302D5E6BA3002E97FD /* ImageCacheManager.swift in Sources */,
 				14BC16982D5D5D1F00FF45A4 /* CosmoRespositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

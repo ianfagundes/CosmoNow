@@ -16,23 +16,7 @@ class GetCosmoUseCase: GetCosmoUseCaseProtocol {
 
     func execute(for date: String?) async throws -> CosmoUseCaseModel {
         let finalDate = date ?? DateUtils.getCurrentDate()
-
-        do {
-            let cosmo = try await repository.fetchCosmo(for: finalDate)
-
-            let mediaType = MediaManager.getMediaType(from: cosmo.mediaType)
-            let mediaURL = MediaManager.getFormattedURL(from: cosmo.url)
-
-            return CosmoUseCaseModel(
-                date: cosmo.date,
-                title: cosmo.title,
-                explanation: cosmo.explanation,
-                mediaType: mediaType,
-                mediaURL: mediaURL
-            )
-        } catch {
-            print("Erro ao buscar CosmoModel: \(error.localizedDescription)")
-            throw error
-        }
+        let result = try await repository.fetchCosmo(for: finalDate)
+        return CosmoUseCaseModel(from: result)
     }
 }

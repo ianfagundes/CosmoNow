@@ -9,12 +9,30 @@ import Foundation
 
 final class NetworkManager {
     static let shared = NetworkManager()
+    private let cacheManager = DataCacheManager.shared
 
     private init() {}
-    
-    func fetch<T: Decodable>(url: URL) async throws -> T {
+
+    func fetch<T: Codable>(url: URL, cacheKey: String) async throws -> T {
+        if let cachedData = cacheManager.getCachedData(for: cacheKey) {
+            print("Dados carregados do cache (\(cacheKey))")
+            return try JSONDecoder().decode(T.self, from: cachedData)
+        }
+
+        let result: T = try await request(url: url, method: "GET")
+
+        if let encodedData = try? JSONEncoder().encode(result) {
+            cacheManager.saveData(encodedData, for: cacheKey)
+        }
+
+        return result
+    }
+
+    func request<T: Decodable>(url: URL, method: String, body: Data? = nil) async throws -> T {
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = method
+        request.httpBody = body
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
