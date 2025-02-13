@@ -38,10 +38,17 @@ struct CosmoView: View {
                             .foregroundColor(.gray)
                     }
                     
-                    MediaView(mediaType: cosmo.mediaType, mediaURL: cosmo.mediaURL)
-                        .frame(height: 300)
-                        .cornerRadius(10)
-                        .padding()
+                    if cosmo.mediaType == .image {
+                        CachedAsyncImage(url:  cosmo.mediaURL?.absoluteString ?? "")
+                            .frame(height: 300)
+                            .cornerRadius(10)
+                            .padding()
+                    } else {
+                        MediaView(mediaType: cosmo.mediaType, mediaURL: cosmo.mediaURL)
+                            .frame(height: 300)
+                            .cornerRadius(10)
+                            .padding()
+                    }
 
                     ScrollView {
                         Text(cosmo.explanation)
@@ -49,11 +56,6 @@ struct CosmoView: View {
                             .padding(.horizontal)
                     }
                     .frame(maxHeight: 200)
-
-                    if viewModel.isLoading {
-                        ProgressView()
-                            .scaleEffect(1.2)
-                    }
 
                 } else if let errorMessage = viewModel.errorMessage {
                     VStack {
