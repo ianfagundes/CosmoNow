@@ -7,16 +7,17 @@
 
 import Foundation
 
+@MainActor
 class CosmoViewModel: ObservableObject {
-    private let GetCosmoUseCase: GetCosmoUseCaseProtocol
-
+    private let getCosmoUseCase: GetCosmoUseCaseProtocol
+    
     @Published var cosmo: CosmoModel?
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var selectedDate: String? = nil
 
     init(getCosmoUseCase: GetCosmoUseCaseProtocol) {
-        self.GetCosmoUseCase = getCosmoUseCase
+        self.getCosmoUseCase = getCosmoUseCase
     }
 
     func fetchCosmo() async {
@@ -24,19 +25,12 @@ class CosmoViewModel: ObservableObject {
         errorMessage = nil
 
         do {
-            let cosmoData = try await GetCosmoUseCase.execute(for: selectedDate)
-
-            DispatchQueue.main.async {
-                
-                self.cosmo = cosmoData
-                self.isLoading = false
-            }
-
+            let cosmoData = try await getCosmoUseCase.execute(for: selectedDate)
+            self.cosmo = cosmoData
         } catch {
-            DispatchQueue.main.async {
-                self.errorMessage = "Erro ao carregar imagem. Tente novamente mais tarde."
-            }
+            self.errorMessage = "Erro ao carregar imagem. Tente novamente mais tarde."
         }
+
         isLoading = false
     }
 }
