@@ -9,13 +9,13 @@
 import XCTest
 
 final class GetCosmoUseCaseTests: XCTestCase {
-    var mockService: MockCosmoService!
+    var mockRepository: MockCosmoRepository!
     var useCase: GetCosmoUseCase!
 
     override func setUp() {
         super.setUp()
-        mockService = MockCosmoService()
-        useCase = GetCosmoUseCase(repository: mockService)
+        mockRepository = MockCosmoRepository()
+        useCase = GetCosmoUseCase(repository: mockRepository)
     }
 
     func testExecute_Success() async {
@@ -29,7 +29,7 @@ final class GetCosmoUseCaseTests: XCTestCase {
     }
 
     func testExecute_Failure() async {
-        mockService.shouldFail = true
+        mockRepository.shouldFail = true
 
         do {
             _ = try await useCase.execute(for: nil)
