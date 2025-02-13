@@ -14,6 +14,7 @@ final class MediaManager {
     }
     
     static func getFormattedURL(from urlString: String) -> URL? {
-        return URL(string: urlString)
+        guard let url = URL(string: urlString), urlString.hasPrefix("https") else { return nil }
+        return url
     }
 }
