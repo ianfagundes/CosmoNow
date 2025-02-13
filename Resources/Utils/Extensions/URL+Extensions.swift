@@ -10,7 +10,8 @@ import Foundation
 extension URL {
     static var nasaCosmoURL: URL {
         guard let url = URL(string: APIConfig.baseURL) else {
-            fatalError("URL inválida: Verifique `APIConfig.baseURL`")
+            print("URL inválida detectada")
+            return URL(string: "https://api.nasa.gov/planetary/apod")!
         }
         return url
     }

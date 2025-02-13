@@ -8,6 +8,7 @@
 @testable import CosmoNow
 import XCTest
 
+@MainActor
 final class CosmoViewModelTests: XCTestCase {
     var mockRepository: MockCosmoRepository!
     var useCase: GetCosmoUseCase!

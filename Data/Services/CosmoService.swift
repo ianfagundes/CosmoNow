@@ -14,6 +14,7 @@ class CosmoService: CosmoServiceProtocol {
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         urlComponents.queryItems = [
             URLQueryItem(name: "api_key", value: APIConfig.apiKey),
+            //FIXME: - Remover data "chumbada
             URLQueryItem(name: "date", value: "2024-02-12"),
         ]
 
