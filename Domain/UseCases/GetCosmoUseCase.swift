@@ -15,6 +15,13 @@ class GetCosmoUseCase: GetCosmoUseCaseProtocol {
     }
 
     func execute(for date: String?) async throws -> CosmoModel {
-        return try await repository.fetchCosmo(for: date)
+        let finalDate = date ?? DateUtils.getCurrentDate()
+
+        do {
+            return try await repository.fetchCosmo(for: finalDate)
+        } catch {
+            print("Erro ao buscar CosmoModel: \(error.localizedDescription)")
+            throw error
+        }
     }
 }

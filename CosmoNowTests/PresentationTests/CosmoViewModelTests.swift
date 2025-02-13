@@ -9,14 +9,14 @@
 import XCTest
 
 final class CosmoViewModelTests: XCTestCase {
-    var mockService: MockCosmoService!
+    var mockRepository: MockCosmoRepository!
     var useCase: GetCosmoUseCase!
     var viewModel: CosmoViewModel!
 
     override func setUp() {
         super.setUp()
-        mockService = MockCosmoService()
-        useCase = GetCosmoUseCase(repository: mockService)
+        mockRepository = MockCosmoRepository()
+        useCase = GetCosmoUseCase(repository: mockRepository)
         viewModel = CosmoViewModel(getCosmoUseCase: useCase)
     }
 
@@ -26,17 +26,15 @@ final class CosmoViewModelTests: XCTestCase {
 
         await viewModel.fetchCosmo()
 
-        await MainActor.run {
-            XCTAssertNotNil(viewModel.cosmo, "Cosmo deve estar preenchido após a busca.")
-            XCTAssertEqual(viewModel.cosmo?.title, "Asteroid Bennu Holds the Building Blocks of Life")
-            XCTAssertEqual(viewModel.cosmo?.url, "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0")
-            XCTAssertNil(viewModel.errorMessage)
-            XCTAssertFalse(viewModel.isLoading)
-        }
+        XCTAssertNotNil(viewModel.cosmo, "Cosmo deve estar preenchido após a busca.")
+        XCTAssertEqual(viewModel.cosmo?.title, "Asteroid Bennu Holds the Building Blocks of Life")
+        XCTAssertEqual(viewModel.cosmo?.url, "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0")
+        XCTAssertNil(viewModel.errorMessage)
+        XCTAssertFalse(viewModel.isLoading)
     }
 
     func testFetchCosmo_Failure() async {
-        mockService.shouldFail = true
+        mockRepository.shouldFail = true
 
         await viewModel.fetchCosmo()
 
