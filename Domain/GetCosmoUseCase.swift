@@ -8,9 +8,9 @@
 import Foundation
 
 class GetCosmoUseCase: GetCosmoUseCaseProtocol {
-    private let repository: CosmoServiceProtocol
+    private let repository: CosmoRepositoryProtocol
 
-    init(repository: CosmoServiceProtocol) {
+    init(repository: CosmoRepositoryProtocol) {
         self.repository = repository
     }
 
