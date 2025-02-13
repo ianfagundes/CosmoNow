@@ -53,6 +53,7 @@
 		1452F12F2D5E6BA3002E97FD /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		1452F1312D5E6C88002E97FD /* DataCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheManager.swift; sourceTree = "<group>"; };
 		1452F1332D5E8149002E97FD /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		145BB3522D5E9E1F002332F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14BC16372D5D3B0200FF45A4 /* CosmoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16472D5D3B0400FF45A4 /* CosmoNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16512D5D3B0400FF45A4 /* CosmoNowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				14BC16D52D5DAC4900FF45A4 /* Utils */,
+				145BB3522D5E9E1F002332F5 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -637,7 +639,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CosmoNow/Preview Content\"";
 				DEVELOPMENT_TEAM = WDD8N4CRD3;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -666,7 +669,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CosmoNow/Preview Content\"";
 				DEVELOPMENT_TEAM = WDD8N4CRD3;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
