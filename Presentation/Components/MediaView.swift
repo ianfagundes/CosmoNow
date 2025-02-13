@@ -27,8 +27,13 @@ struct MediaView: View {
                     YouTubeWebView(videoURL: url)
                         .frame(height: 300)
                 } else {
-                    VideoPlayer(player: AVPlayer(url: url))
-                        .frame(height: 300)
+                    if url.isFileURL || url.absoluteString.hasSuffix(".mp4") {
+                        VideoPlayer(player: AVPlayer(url: url))
+                            .frame(height: 300)
+                    } else {
+                        Text("Formato de vídeo não suportado")
+                            .foregroundColor(.red)
+                    }
                 }
             case .unknown:
                 Text("Mídia não suportada")
