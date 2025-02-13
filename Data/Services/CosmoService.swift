@@ -21,8 +21,7 @@ class CosmoService: CosmoServiceProtocol {
 
         urlComponents.queryItems = [
             URLQueryItem(name: "api_key", value: APIConfig.apiKey),
-            // FIXME: - Remover data "chumbada
-            URLQueryItem(name: "date", value: "2024-01-06"),
+            URLQueryItem(name: "date", value: selectedDate),
         ]
 
         guard let url = urlComponents.url else {

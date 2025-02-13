@@ -21,7 +21,16 @@ struct CosmoView: View {
 
     var body: some View {
         NavigationView {
-            VStack(spacing: 16) {
+            VStack(spacing: 24) {
+                DatePicker(
+                    "Pick a date to get information:",
+                    selection: $viewModel.selectedDate,
+                    in: ...Date(),
+                    displayedComponents: .date
+                )
+                .datePickerStyle(.compact)
+                .padding()
+                
                 if viewModel.isLoading && viewModel.cosmo == nil {
                     ProgressView()
                         .scaleEffect(1.5)
