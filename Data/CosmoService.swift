@@ -7,19 +7,18 @@
 
 import Foundation
 
-class CosmoService {
+class CosmoService: CosmoServiceProtocol {
     private let baseURL: URL = URL(string: "https://api.nasa.gov/planetary/apod")!
     private let apikey: String = "c0cfC2fB8BG5hFkAu8x3bHkw2oUzE8xha4RDpfWC"
 
     func fetchCosmo(for date: String? = nil) async throws -> CosmoModel {
+        let selectedDate = date ?? getCurrentDate()
+
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)!
         urlComponents.queryItems = [
             URLQueryItem(name: "api_key", value: apikey),
+            URLQueryItem(name: "date", value: selectedDate)
         ]
-
-        if let date = date {
-            urlComponents.queryItems?.append(URLQueryItem(name: "date", value: date))
-        }
 
         guard let url = urlComponents.url else {
             throw URLError(.badURL)
@@ -27,5 +26,11 @@ class CosmoService {
 
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(CosmoModel.self, from: data)
+    }
+    
+    private func getCurrentDate() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: Date())
     }
 }
