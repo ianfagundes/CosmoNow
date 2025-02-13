@@ -8,7 +8,7 @@
 @testable import CosmoNow
 import Foundation
 
-class MockCosmoService: CosmoServiceProtocol, @unchecked Sendable {
+final class MockCosmoService: CosmoServiceProtocol {
     var shouldFail = false
 
     func fetchCosmo(for date: String?) async throws -> CosmoModel {
@@ -17,7 +17,7 @@ class MockCosmoService: CosmoServiceProtocol, @unchecked Sendable {
         }
         return CosmoModel(
             date: "2025-02-12",
-            explanation: "Amostra de descrição.",
+            explanation: "What can a space rock tell us about life on Earth?",
             mediaType: "video",
             serviceVersion: "v1",
             title: "Asteroid Bennu Holds the Building Blocks of Life",
