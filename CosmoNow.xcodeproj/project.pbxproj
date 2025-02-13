@@ -16,6 +16,9 @@
 		14BC16992D5D5D2600FF45A4 /* CosmoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166A2D5D3CA000FF45A4 /* CosmoModel.swift */; };
 		14BC169A2D5D5D2C00FF45A4 /* CosmoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16722D5D3E4500FF45A4 /* CosmoView.swift */; };
 		14BC169B2D5D5D3200FF45A4 /* CosmoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */; };
+		14BC169D2D5D637B00FF45A4 /* CosmoServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC169C2D5D637200FF45A4 /* CosmoServiceProtocol.swift */; };
+		14BC16A22D5D902200FF45A4 /* GetCosmoUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16A12D5D901800FF45A4 /* GetCosmoUseCaseProtocol.swift */; };
+		14BC16AA2D5D960800FF45A4 /* CosmoRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16A92D5D960000FF45A4 /* CosmoRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		14BC16702D5D3E1300FF45A4 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoViewModel.swift; sourceTree = "<group>"; };
 		14BC16722D5D3E4500FF45A4 /* CosmoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoView.swift; sourceTree = "<group>"; };
+		14BC169C2D5D637200FF45A4 /* CosmoServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoServiceProtocol.swift; sourceTree = "<group>"; };
+		14BC16A12D5D901800FF45A4 /* GetCosmoUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCosmoUseCaseProtocol.swift; sourceTree = "<group>"; };
+		14BC16A92D5D960000FF45A4 /* CosmoRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -130,6 +136,7 @@
 		14BC16652D5D3B3800FF45A4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				14BC16A12D5D901800FF45A4 /* GetCosmoUseCaseProtocol.swift */,
 				14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */,
 				14BC166B2D5D3CD600FF45A4 /* CosmoRespositoryProtocol.swift */,
 				14BC166A2D5D3CA000FF45A4 /* CosmoModel.swift */,
@@ -140,6 +147,8 @@
 		14BC16662D5D3B4600FF45A4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				14BC16A92D5D960000FF45A4 /* CosmoRepositoryProtocol.swift */,
+				14BC169C2D5D637200FF45A4 /* CosmoServiceProtocol.swift */,
 				14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */,
 				14BC166D2D5D3DC200FF45A4 /* CosmoRepository.swift */,
 			);
@@ -307,7 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				14BC16992D5D5D2600FF45A4 /* CosmoModel.swift in Sources */,
+				14BC169D2D5D637B00FF45A4 /* CosmoServiceProtocol.swift in Sources */,
 				14BC16942D5D5D0100FF45A4 /* LocalStorage.swift in Sources */,
+				14BC16A22D5D902200FF45A4 /* GetCosmoUseCaseProtocol.swift in Sources */,
+				14BC16AA2D5D960800FF45A4 /* CosmoRepositoryProtocol.swift in Sources */,
 				14BC169B2D5D5D3200FF45A4 /* CosmoViewModel.swift in Sources */,
 				14BC16952D5D5D0800FF45A4 /* NetworkManager.swift in Sources */,
 				14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */,
@@ -491,7 +503,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianfagundes.CosmoNow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -520,7 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianfagundes.CosmoNow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
