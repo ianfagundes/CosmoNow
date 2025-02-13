@@ -22,3 +22,14 @@ struct CosmoModel: Codable, Identifiable {
         case serviceVersion = "service_version"
     }
 }
+
+enum MediaType: String, Codable {
+    case image
+    case video
+    case unknown
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        self = MediaType(rawValue: try container.decode(String.self)) ?? .unknown
+    }
+}

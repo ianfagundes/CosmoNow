@@ -8,5 +8,5 @@
 import Foundation
 
 protocol GetCosmoUseCaseProtocol {
-    func execute(for date: String?) async throws -> CosmoModel
+    func execute(for date: String?) async throws -> CosmoUseCaseModel
 }

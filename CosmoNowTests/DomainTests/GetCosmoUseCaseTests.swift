@@ -22,7 +22,7 @@ final class GetCosmoUseCaseTests: XCTestCase {
         do {
             let cosmo = try await useCase.execute(for: nil)
             XCTAssertEqual(cosmo.title, "Asteroid Bennu Holds the Building Blocks of Life")
-            XCTAssertEqual(cosmo.url, "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0")
+            XCTAssertEqual(cosmo.mediaURL?.absoluteString, "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0")
         } catch {
             XCTFail("Erro inesperado ao buscar o Cosmo")
         }

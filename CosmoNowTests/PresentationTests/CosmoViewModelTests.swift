@@ -29,7 +29,7 @@ final class CosmoViewModelTests: XCTestCase {
 
         XCTAssertNotNil(viewModel.cosmo, "Cosmo deve estar preenchido após a busca.")
         XCTAssertEqual(viewModel.cosmo?.title, "Asteroid Bennu Holds the Building Blocks of Life")
-        XCTAssertEqual(viewModel.cosmo?.url, "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0")
+        XCTAssertEqual(viewModel.cosmo?.mediaURL?.absoluteString, "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0")
         XCTAssertNil(viewModel.errorMessage)
         XCTAssertFalse(viewModel.isLoading)
     }

@@ -11,7 +11,7 @@ import Foundation
 class CosmoViewModel: ObservableObject {
     private let getCosmoUseCase: GetCosmoUseCaseProtocol
     
-    @Published var cosmo: CosmoModel?
+    @Published var cosmo: CosmoUseCaseModel?
     @Published var isLoading = false
     @Published var errorMessage: String?
     @Published var selectedDate: String? = nil
