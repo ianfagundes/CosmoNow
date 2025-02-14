@@ -10,11 +10,12 @@ import SwiftUI
 
 struct DatePickerModalView: View {
     @ObservedObject var viewModel: CosmoViewModel
+    @Binding var selectedTab: Int
 
-    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack {
             Text("Pick a date:")
+                .foregroundColor(ThemeManager.primaryColor)
                 .font(.headline)
                 .padding()
 
@@ -25,17 +26,27 @@ struct DatePickerModalView: View {
                 displayedComponents: .date
             )
             .datePickerStyle(.graphical)
+            .accentColor(ThemeManager.primaryColor)
             .padding()
 
-            Button("Confirm") {
+            Button(action: {
+                selectedTab = 0
                 Task {
                     await viewModel.fetchCosmo()
                 }
-                dismiss()
+            }) {
+                Text("Confirm")
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 50)
+                    .foregroundColor(ThemeManager.backgroundColor)
+                    .background(ThemeManager.primaryColor)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    .contentShape(Rectangle())
             }
-            .buttonStyle(.borderedProminent)
             .padding()
         }
         .padding()
+        .cornerRadius(15)
     }
 }
