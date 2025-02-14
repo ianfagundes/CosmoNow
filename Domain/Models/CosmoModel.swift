@@ -33,3 +33,14 @@ enum MediaType: String, Codable {
         self = MediaType(rawValue: try container.decode(String.self)) ?? .unknown
     }
 }
+
+extension CosmoModel {
+    init(from useCaseModel: CosmoUseCaseModel) {
+        self.date = useCaseModel.date
+        self.explanation = useCaseModel.explanation
+        self.mediaType = useCaseModel.mediaType.rawValue
+        self.serviceVersion = "V1"
+        self.title = useCaseModel.title
+        self.url = useCaseModel.mediaURL?.absoluteString ?? ""
+    }
+}
