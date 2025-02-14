@@ -9,58 +9,49 @@ import SwiftUI
 
 struct CachedAsyncImage: View {
     let url: String
+    let width: CGFloat
+    let height: CGFloat
 
-    @State private var image: UIImage?
-    @State private var isLoading = false
+    @StateObject private var viewModel = CachedImageViewModel()
 
     var body: some View {
         ZStack {
-            if let image = image {
+            if let image = viewModel.image {
                 Image(uiImage: image)
                     .resizable()
-                    .scaledToFit()
-            } else if isLoading {
-                ProgressView()
+                    .scaledToFill()
+                    .frame(width: width, height: height)
+                    .clipped()
+                    .cornerRadius(12)
+                    .transition(.opacity)
             } else {
                 Image(systemName: "photo")
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(.gray)
                     .frame(width: 50, height: 50)
-                    .onAppear {
-                        Task {
-                            await loadImage()
-                        }
-                    }
+                    .transition(.opacity)
+            }
+
+            if viewModel.isLoading {
+                Color.black.opacity(0.1)
+                    .frame(width: width, height: height)
+                    .cornerRadius(12)
+                    .overlay(
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .tint(ThemeManager.ProgressIndicator)
+                            .scaleEffect(1.2)
+                    )
+                    .transition(.opacity)
             }
         }
-    }
-
-    private func loadImage() async {
-        guard !url.isEmpty, let imageUrl = URL(string: url) else {
-            print("URL inválida: \(url)")
-            return
+        .animation(.easeInOut(duration: 0.3), value: viewModel.image)
+        .onAppear {
+            viewModel.loadImage(from: url)
         }
-
-        if let cachedImage = ImageCacheManager.shared.getImage(for: url) {
-            image = cachedImage
-            return
-        }
-
-        do {
-            isLoading = true
-            let (data, _) = try await URLSession.shared.data(from: imageUrl)
-            guard let downloadedImage = UIImage(data: data) else { return }
-
-            ImageCacheManager.shared.saveImage(downloadedImage, for: url)
-
-            DispatchQueue.main.async {
-                self.image = downloadedImage
-                self.isLoading = false
-            }
-        } catch {
-            print("Erro ao baixar imagem: \(error.localizedDescription)")
-            isLoading = false
+        .onChange(of: url) { newUrl in
+            viewModel.loadImage(from: newUrl)
         }
     }
 }

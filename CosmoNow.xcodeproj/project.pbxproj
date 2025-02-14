@@ -22,6 +22,7 @@
 		147DAFDA2D5FA05B00FB30D6 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFD92D5FA05B00FB30D6 /* FavoriteButton.swift */; };
 		147DAFDD2D5FA07300FB30D6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */; };
 		147DAFDE2D5FA07300FB30D6 /* DetailFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFDB2D5FA07300FB30D6 /* DetailFavoritesView.swift */; };
+		147DAFE22D5FBF3000FB30D6 /* CachedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFE12D5FBF3000FB30D6 /* CachedImageViewModel.swift */; };
 		14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */; };
 		14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */; };
 		14BC16982D5D5D1F00FF45A4 /* CosmoRespositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166B2D5D3CD600FF45A4 /* CosmoRespositoryProtocol.swift */; };
@@ -67,6 +68,7 @@
 		147DAFD92D5FA05B00FB30D6 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		147DAFDB2D5FA07300FB30D6 /* DetailFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoritesView.swift; sourceTree = "<group>"; };
 		147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		147DAFE12D5FBF3000FB30D6 /* CachedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageViewModel.swift; sourceTree = "<group>"; };
 		14BC16372D5D3B0200FF45A4 /* CosmoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16472D5D3B0400FF45A4 /* CosmoNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16512D5D3B0400FF45A4 /* CosmoNowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +234,26 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		147DAFDF2D5FBF0700FB30D6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */,
+				147DAFE12D5FBF3000FB30D6 /* CachedImageViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		147DAFE02D5FBF1E00FB30D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				14BC16722D5D3E4500FF45A4 /* CosmoView.swift */,
+				147DAFDB2D5FA07300FB30D6 /* DetailFavoritesView.swift */,
+				147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */,
+				141CABC62D5EAA8A005E02BC /* MainTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		14BC162E2D5D3B0200FF45A4 = {
 			isa = PBXGroup;
 			children = (
@@ -260,11 +282,8 @@
 			isa = PBXGroup;
 			children = (
 				1452F1292D5E626A002E97FD /* Components */,
-				14BC16722D5D3E4500FF45A4 /* CosmoView.swift */,
-				14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */,
-				147DAFDB2D5FA07300FB30D6 /* DetailFavoritesView.swift */,
-				147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */,
-				141CABC62D5EAA8A005E02BC /* MainTabView.swift */,
+				147DAFE02D5FBF1E00FB30D6 /* Views */,
+				147DAFDF2D5FBF0700FB30D6 /* ViewModels */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -482,6 +501,7 @@
 				147DAFDD2D5FA07300FB30D6 /* FavoritesView.swift in Sources */,
 				147DAFDE2D5FA07300FB30D6 /* DetailFavoritesView.swift in Sources */,
 				147DAFD82D5FA03300FB30D6 /* FavoritesManager.swift in Sources */,
+				147DAFE22D5FBF3000FB30D6 /* CachedImageViewModel.swift in Sources */,
 				14BC16992D5D5D2600FF45A4 /* CosmoModel.swift in Sources */,
 				1452F1232D5E351F002E97FD /* MediaManager.swift in Sources */,
 				14BC169D2D5D637B00FF45A4 /* CosmoServiceProtocol.swift in Sources */,
