@@ -18,19 +18,11 @@ struct CosmoView: View {
     @StateObject private var viewModel = CosmoViewModel(
         getCosmoUseCase: GetCosmoUseCase(repository: CosmoRepository(service: CosmoService()))
     )
+    @State private var isDatePickerPresented = false
 
     var body: some View {
         NavigationView {
             VStack(spacing: 24) {
-                DatePicker(
-                    "Pick a date to get information:",
-                    selection: $viewModel.selectedDate,
-                    in: ...Date(),
-                    displayedComponents: .date
-                )
-                .datePickerStyle(.compact)
-                .padding()
-                
                 if viewModel.isLoading && viewModel.cosmo == nil {
                     ProgressView()
                         .scaleEffect(1.5)
@@ -72,7 +64,7 @@ struct CosmoView: View {
                             .foregroundColor(.red)
                             .multilineTextAlignment(.center)
                             .padding()
-                        
+
                         Button("Tentar Novamente") {
                             Task {
                                 await viewModel.fetchCosmo()
@@ -82,6 +74,33 @@ struct CosmoView: View {
                         .padding()
                     }
                 }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        Task {
+                            if viewModel.isFavorite {
+                                viewModel.removeFromFavorites()
+                            } else {
+                                viewModel.addToFavorites()
+                            }
+                        }
+                    }) {
+                        Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                            .foregroundColor(viewModel.isFavorite ? .red : .gray)
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        isDatePickerPresented.toggle()
+                    }) {
+                        Image(systemName: "calendar")
+                    }
+                }
+            }
+            .sheet(isPresented: $isDatePickerPresented) {
+                DatePickerModalView(viewModel: viewModel)
             }
             .task {
                 await viewModel.fetchCosmo()
