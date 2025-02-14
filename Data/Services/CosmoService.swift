@@ -12,11 +12,6 @@ class CosmoService: CosmoServiceProtocol {
         let selectedDate = date ?? DateUtils.getCurrentDate()
         let cacheKey = "cosmo_\(selectedDate)"
 
-        if let cachedData = DataCacheManager.shared.getCachedData(for: cacheKey) {
-            print("Dados carregados do cache (\(cacheKey))")
-            return try JSONDecoder().decode(CosmoModel.self, from: cachedData)
-        }
-
         var urlComponents = URLComponents(url: .nasaCosmoURL, resolvingAgainstBaseURL: true)!
 
         urlComponents.queryItems = [
@@ -28,19 +23,6 @@ class CosmoService: CosmoServiceProtocol {
             throw NetworkError.invalidURL
         }
 
-        print("URL gerada: \(url.absoluteString)")
-
-        if let cachedData = DataCacheManager.shared.getCachedData(for: url.absoluteString) {
-            print("Recuperando dados do cache para a data: \(selectedDate)")
-            return try JSONDecoder().decode(CosmoModel.self, from: cachedData)
-        }
-        
-        let result: CosmoModel = try await NetworkManager.shared.fetch(url: url, cacheKey: cacheKey)
-
-        if let encodedData = try? JSONEncoder().encode(result) {
-            DataCacheManager.shared.saveData(encodedData, for: cacheKey)
-        }
-
-        return result
+        return try await NetworkManager.shared.fetch(url: url, cacheKey: cacheKey)
     }
 }
