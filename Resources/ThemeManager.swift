@@ -31,4 +31,10 @@ struct ThemeManager {
             traitCollection.userInterfaceStyle == .dark ? #colorLiteral(red: 0.984, green: 0.988, blue: 0.89, alpha: 1.0) : #colorLiteral(red: 0.039, green: 0.0, blue: 0.137, alpha: 1.0)
         })
     }()
+    
+    static let ProgressIndicator: Color = {
+        return Color(uiColor: UIColor { traitCollection in
+            traitCollection.userInterfaceStyle == .dark ? #colorLiteral(red: 0.984, green: 0.988, blue: 0.89, alpha: 1.0) : #colorLiteral(red: 0.039, green: 0.0, blue: 0.137, alpha: 1.0)
+        })
+    }()
 }
