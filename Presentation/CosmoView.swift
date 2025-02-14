@@ -12,103 +12,79 @@
 //  Created by Ian Fagundes on 12/02/25.
 //
 
+import Foundation
 import SwiftUI
 
 struct CosmoView: View {
-    @StateObject private var viewModel = CosmoViewModel(
-        getCosmoUseCase: GetCosmoUseCase(repository: CosmoRepository(service: CosmoService()))
-    )
-    @State private var isDatePickerPresented = false
+    @StateObject var viewModel: CosmoViewModel
 
     var body: some View {
-        NavigationView {
-            VStack(spacing: 24) {
-                if viewModel.isLoading && viewModel.cosmo == nil {
-                    ProgressView()
-                        .scaleEffect(1.5)
-                } else if let cosmo = viewModel.cosmo {
-                    VStack(spacing: 10) {
-                        Text(cosmo.title)
-                            .font(.title)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal)
+        VStack(spacing: 16) {
+            if viewModel.isLoading && viewModel.cosmo == nil {
+                ProgressView()
+                    .scaleEffect(1.5)
+            } else if let cosmo = viewModel.cosmo {
+                VStack(spacing: 5) {
+                    Text(cosmo.title)
+                        .font(.title)
+                        .foregroundColor(ThemeManager.secondaryColor).multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                        .padding(.top, 32)
 
-                        Text(cosmo.date)
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
-                    
+                    Text(cosmo.date)
+                        .font(.subheadline)
+                        .foregroundColor(.gray)
+                }
+                ZStack(alignment: .bottomTrailing) {
                     if cosmo.mediaType == .image {
-                        CachedAsyncImage(url:  cosmo.mediaURL?.absoluteString ?? "")
-                            .frame(height: 300)
-                            .cornerRadius(10)
-                            .padding()
+                        CachedAsyncImage(
+                            url: cosmo.mediaURL?.absoluteString ?? "",
+                            width: UIScreen.main.bounds.width - 64,
+                            height: 192
+                        )
+                        .cornerRadius(10)
+                        .padding(.top, 5)
                     } else {
                         MediaView(mediaType: cosmo.mediaType, mediaURL: cosmo.mediaURL)
-                            .frame(height: 300)
+                            .frame(width: UIScreen.main.bounds.width - 64, height: 192)
                             .cornerRadius(10)
-                            .padding()
+                            .padding(.top, 5)
                     }
 
-                    ScrollView {
-                        Text(cosmo.explanation)
-                            .font(.body)
-                            .padding(.horizontal)
-                    }
-                    .frame(maxHeight: 200)
-
-                } else if let errorMessage = viewModel.errorMessage {
-                    VStack {
-                        Text(errorMessage)
-                            .foregroundColor(.red)
-                            .multilineTextAlignment(.center)
-                            .padding()
-
-                        Button("Tentar Novamente") {
-                            Task {
-                                await viewModel.fetchCosmo()
-                            }
-                        }
-                        .buttonStyle(.borderedProminent)
+                    FavoriteButton(isFavorite: $viewModel.isFavorite, toggleAction: {
+                        viewModel.toggleFavorite()
+                    })
+                }
+                ScrollView {
+                    Text(cosmo.explanation)
+                        .font(.body)
+                        .foregroundColor(ThemeManager.textColor)
+                        .padding(.horizontal, 32)
+                        .padding(.bottom, 48)
+                }
+            } else if let errorMessage = viewModel.errorMessage {
+                VStack {
+                    Text(errorMessage)
+                        .foregroundColor(.red)
+                        .multilineTextAlignment(.center)
                         .padding()
-                    }
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
+
+                    Button("Tentar Novamente") {
                         Task {
-                            if viewModel.isFavorite {
-                                viewModel.removeFromFavorites()
-                            } else {
-                                viewModel.addToFavorites()
-                            }
+                            await viewModel.fetchCosmo()
                         }
-                    }) {
-                        Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
-                            .foregroundColor(viewModel.isFavorite ? .red : .gray)
                     }
-                }
-                
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        isDatePickerPresented.toggle()
-                    }) {
-                        Image(systemName: "calendar")
-                    }
+                    .buttonStyle(.borderedProminent)
+                    .padding()
                 }
             }
-            .sheet(isPresented: $isDatePickerPresented) {
-                DatePickerModalView(viewModel: viewModel)
-            }
-            .task {
-                await viewModel.fetchCosmo()
+        }
+        .onAppear {
+            Task {
+                if viewModel.cosmo == nil {
+                    await viewModel.fetchCosmo()
+                }
             }
         }
     }
-}
-
-#Preview {
-    CosmoView()
 }
