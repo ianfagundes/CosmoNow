@@ -10,11 +10,10 @@ import SwiftUI
 
 struct FavoriteButton: View {
     @Binding var isFavorite: Bool
-    let toggleAction: () -> Void
 
     var body: some View {
         Button(action: {
-            toggleAction()
+            isFavorite.toggle()
         }) {
             Image(systemName: isFavorite ? "heart.fill" : "heart")
                 .resizable()
