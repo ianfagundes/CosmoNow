@@ -9,43 +9,66 @@ import Foundation
 import SwiftUI
 
 struct FavoritesView: View {
-    @State private var favorites: [CosmoModel] = FavoritesManager.shared.getFavorites()
+    @EnvironmentObject private var viewModel: FavoritesViewModel
+    @State private var isEditing = false
+    @State private var selectedFavorites: Set<String> = []
 
     var body: some View {
         NavigationView {
-            List(favorites, id: \.date) { cosmo in
-                NavigationLink(destination: DetailFavoritesView(cosmo: cosmo)) {
-                    HStack(spacing: 16) {
-                        CachedAsyncImage(url: cosmo.url, width: 60, height: 60)
-                            .aspectRatio(contentMode: .fill)
-                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                            .background(Color.clear)
-                            .clipped()
-
-                        VStack(alignment: .leading) {
-                            Text(cosmo.title)
-                                .font(.subheadline)
-                                .foregroundColor(ThemeManager.primaryColor)
-                            Text(cosmo.date)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
+            List(viewModel.favorites, id: \.id) { cosmo in
+                HStack {
+                    if isEditing {
+                        Image(systemName: selectedFavorites.contains(cosmo.id) ? "checkmark.circle.fill" : "circle")
+                            .foregroundColor(selectedFavorites.contains(cosmo.id) ? .red : .gray)
+                            .onTapGesture {
+                                if selectedFavorites.contains(cosmo.id) {
+                                    selectedFavorites.remove(cosmo.id)
+                                } else {
+                                    selectedFavorites.insert(cosmo.id)
+                                }
+                            }
                     }
-                    .padding(.vertical, 8)
+
+                    NavigationLink(destination: DetailFavoritesView(cosmo: cosmo, viewModel: viewModel)) {
+                        HStack(spacing: 16) {
+                            CachedAsyncImage(url: cosmo.url, width: 60, height: 60)
+                                .aspectRatio(contentMode: .fill)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .background(Color.clear)
+                                .clipped()
+
+                            VStack(alignment: .leading) {
+                                Text(cosmo.title)
+                                    .font(.subheadline)
+                                    .foregroundColor(ThemeManager.primaryColor)
+                                Text(cosmo.date)
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        .padding(.vertical, 8)
+                    }
                 }
             }
             .navigationTitle("Favorites")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Text("Favorites")
-                        .font(.headline)
-                        .foregroundColor(ThemeManager.primaryColor)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(isEditing ? "Confirm" : "Edit") {
+                        if isEditing {
+                            if !selectedFavorites.isEmpty {
+                                viewModel.removeFavorites(Array(selectedFavorites))
+                                selectedFavorites.removeAll()
+                            }
+                        }
+                        isEditing.toggle()
+                    }
+                    .padding(.trailing, 8)
                 }
             }
         }
         .onAppear {
-            favorites = FavoritesManager.shared.getFavorites()
+            viewModel.loadFavorites()
         }
     }
 }
