@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DetailFavoritesView: View {
     let cosmo: CosmoModel
+    @ObservedObject var viewModel: FavoritesViewModel
 
     var body: some View {
         VStack {
@@ -34,6 +35,13 @@ struct DetailFavoritesView: View {
             .frame(maxHeight: 200)
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
+
+            FavoriteButton(
+                isFavorite: Binding(
+                    get: { viewModel.isFavorite(cosmo) },
+                    set: { _ in viewModel.toggleFavorite(cosmo) }
+                )
+            )
         }
     }
 }
