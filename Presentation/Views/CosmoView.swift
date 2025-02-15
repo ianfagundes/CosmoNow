@@ -16,8 +16,9 @@ import Foundation
 import SwiftUI
 
 struct CosmoView: View {
-    @StateObject var viewModel: CosmoViewModel
-
+    @EnvironmentObject var viewModel: CosmoViewModel
+    @EnvironmentObject var favoritesViewModel: FavoritesViewModel
+    
     var body: some View {
         VStack(spacing: 16) {
             if viewModel.isLoading && viewModel.cosmo == nil {
@@ -51,9 +52,12 @@ struct CosmoView: View {
                             .padding(.top, 5)
                     }
 
-                    FavoriteButton(isFavorite: $viewModel.isFavorite, toggleAction: {
-                        viewModel.toggleFavorite()
-                    })
+                    FavoriteButton(
+                        isFavorite: Binding(
+                            get: { favoritesViewModel.isFavorite(CosmoModel(from: cosmo)) },
+                            set: { _ in favoritesViewModel.toggleFavorite(CosmoModel(from: cosmo)) }
+                        )
+                    )
                 }
                 ScrollView {
                     Text(cosmo.explanation)
