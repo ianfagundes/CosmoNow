@@ -41,6 +41,12 @@ final class FavoritesManager {
         return decoded
     }
 
+    func removeFavorites(_ ids: [String]) {
+        var favorites = getFavorites()
+        favorites.removeAll { ids.contains($0.id) }
+        save(favorites)
+    }
+    
     private func save(_ favorites: [CosmoModel]) {
         if let encoded = try? JSONEncoder().encode(favorites) {
             defaults.set(encoded, forKey: favoritesKey)
