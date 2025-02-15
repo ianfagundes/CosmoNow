@@ -32,6 +32,7 @@
 		14BC169D2D5D637B00FF45A4 /* CosmoServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC169C2D5D637200FF45A4 /* CosmoServiceProtocol.swift */; };
 		14BC16A22D5D902200FF45A4 /* GetCosmoUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16A12D5D901800FF45A4 /* GetCosmoUseCaseProtocol.swift */; };
 		14BC16D82D5DACCD00FF45A4 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16D72D5DAC5B00FF45A4 /* DateUtils.swift */; };
+		14BD605F2D5FFA62003E06DE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD605E2D5FFA62003E06DE /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		14BC169C2D5D637200FF45A4 /* CosmoServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoServiceProtocol.swift; sourceTree = "<group>"; };
 		14BC16A12D5D901800FF45A4 /* GetCosmoUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCosmoUseCaseProtocol.swift; sourceTree = "<group>"; };
 		14BC16D72D5DAC5B00FF45A4 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		14BD605E2D5FFA62003E06DE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -239,6 +241,7 @@
 			children = (
 				14BC16712D5D3E3800FF45A4 /* CosmoViewModel.swift */,
 				147DAFE12D5FBF3000FB30D6 /* CachedImageViewModel.swift */,
+				14BD605E2D5FFA62003E06DE /* FavoritesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				141CABC72D5EAA8A005E02BC /* MainTabView.swift in Sources */,
 				1452F1342D5E8150002E97FD /* CachedAsyncImage.swift in Sources */,
 				14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */,
+				14BD605F2D5FFA62003E06DE /* FavoritesViewModel.swift in Sources */,
 				14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */,
 				1452F12D2D5E6294002E97FD /* YouTubeWebView.swift in Sources */,
 				1452F1272D5E3FF6002E97FD /* MediaView.swift in Sources */,
