@@ -228,6 +228,7 @@
 				1452F1262D5E3FF2002E97FD /* MediaView.swift */,
 				141CABC82D5EAAEA005E02BC /* DatePickerModalView.swift */,
 				14BD60612D613D34003E06DE /* ThumbnailView.swift */,
+				14BD60672D61617F003E06DE /* CosmoDetailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -257,7 +258,6 @@
 				14BC16722D5D3E4500FF45A4 /* CosmoView.swift */,
 				147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */,
 				141CABC62D5EAA8A005E02BC /* MainTabView.swift */,
-				14BD60672D61617F003E06DE /* CosmoDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
