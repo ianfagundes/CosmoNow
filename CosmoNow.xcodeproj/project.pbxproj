@@ -21,7 +21,6 @@
 		147DAFD82D5FA03300FB30D6 /* FavoritesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFD72D5FA03300FB30D6 /* FavoritesManager.swift */; };
 		147DAFDA2D5FA05B00FB30D6 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFD92D5FA05B00FB30D6 /* FavoriteButton.swift */; };
 		147DAFDD2D5FA07300FB30D6 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */; };
-		147DAFDE2D5FA07300FB30D6 /* DetailFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFDB2D5FA07300FB30D6 /* DetailFavoritesView.swift */; };
 		147DAFE22D5FBF3000FB30D6 /* CachedImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFE12D5FBF3000FB30D6 /* CachedImageViewModel.swift */; };
 		14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */; };
 		14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */; };
@@ -33,6 +32,9 @@
 		14BC16A22D5D902200FF45A4 /* GetCosmoUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16A12D5D901800FF45A4 /* GetCosmoUseCaseProtocol.swift */; };
 		14BC16D82D5DACCD00FF45A4 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC16D72D5DAC5B00FF45A4 /* DateUtils.swift */; };
 		14BD605F2D5FFA62003E06DE /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD605E2D5FFA62003E06DE /* FavoritesViewModel.swift */; };
+		14BD60622D613D34003E06DE /* ThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD60612D613D34003E06DE /* ThumbnailView.swift */; };
+		14BD60652D614CB7003E06DE /* YouTubeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD60642D614CB7003E06DE /* YouTubeUtils.swift */; };
+		14BD60682D616180003E06DE /* CosmoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD60672D61617F003E06DE /* CosmoDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +69,6 @@
 		145BB3522D5E9E1F002332F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		147DAFD72D5FA03300FB30D6 /* FavoritesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManager.swift; sourceTree = "<group>"; };
 		147DAFD92D5FA05B00FB30D6 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
-		147DAFDB2D5FA07300FB30D6 /* DetailFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoritesView.swift; sourceTree = "<group>"; };
 		147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		147DAFE12D5FBF3000FB30D6 /* CachedImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageViewModel.swift; sourceTree = "<group>"; };
 		14BC16372D5D3B0200FF45A4 /* CosmoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +84,9 @@
 		14BC16A12D5D901800FF45A4 /* GetCosmoUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCosmoUseCaseProtocol.swift; sourceTree = "<group>"; };
 		14BC16D72D5DAC5B00FF45A4 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		14BD605E2D5FFA62003E06DE /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		14BD60612D613D34003E06DE /* ThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailView.swift; sourceTree = "<group>"; };
+		14BD60642D614CB7003E06DE /* YouTubeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeUtils.swift; sourceTree = "<group>"; };
+		14BD60672D61617F003E06DE /* CosmoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmoDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -223,6 +227,7 @@
 				1452F12C2D5E6289002E97FD /* YouTubeWebView.swift */,
 				1452F1262D5E3FF2002E97FD /* MediaView.swift */,
 				141CABC82D5EAAEA005E02BC /* DatePickerModalView.swift */,
+				14BD60612D613D34003E06DE /* ThumbnailView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -250,9 +255,9 @@
 			isa = PBXGroup;
 			children = (
 				14BC16722D5D3E4500FF45A4 /* CosmoView.swift */,
-				147DAFDB2D5FA07300FB30D6 /* DetailFavoritesView.swift */,
 				147DAFDC2D5FA07300FB30D6 /* FavoritesView.swift */,
 				141CABC62D5EAA8A005E02BC /* MainTabView.swift */,
+				14BD60672D61617F003E06DE /* CosmoDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 		14BC16D52D5DAC4900FF45A4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				14BD60632D614C9A003E06DE /* Helpers */,
 				1452F11E2D5DB4C5002E97FD /* Extensions */,
 				14BC16D62D5DAC5200FF45A4 /* DateUtils */,
 			);
@@ -354,6 +360,14 @@
 				14BC16D72D5DAC5B00FF45A4 /* DateUtils.swift */,
 			);
 			path = DateUtils;
+			sourceTree = "<group>";
+		};
+		14BD60632D614C9A003E06DE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				14BD60642D614CB7003E06DE /* YouTubeUtils.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,12 +514,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				141CABC92D5EAAEA005E02BC /* DatePickerModalView.swift in Sources */,
+				14BD60652D614CB7003E06DE /* YouTubeUtils.swift in Sources */,
 				1452F1202D5DB4DE002E97FD /* URL+Extensions.swift in Sources */,
 				147DAFDD2D5FA07300FB30D6 /* FavoritesView.swift in Sources */,
-				147DAFDE2D5FA07300FB30D6 /* DetailFavoritesView.swift in Sources */,
 				147DAFD82D5FA03300FB30D6 /* FavoritesManager.swift in Sources */,
 				147DAFE22D5FBF3000FB30D6 /* CachedImageViewModel.swift in Sources */,
 				14BC16992D5D5D2600FF45A4 /* CosmoModel.swift in Sources */,
+				14BD60622D613D34003E06DE /* ThumbnailView.swift in Sources */,
 				1452F1232D5E351F002E97FD /* MediaManager.swift in Sources */,
 				14BC169D2D5D637B00FF45A4 /* CosmoServiceProtocol.swift in Sources */,
 				1452F1322D5E6C88002E97FD /* DataCacheManager.swift in Sources */,
@@ -518,6 +533,7 @@
 				14BD605F2D5FFA62003E06DE /* FavoritesViewModel.swift in Sources */,
 				14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */,
 				1452F12D2D5E6294002E97FD /* YouTubeWebView.swift in Sources */,
+				14BD60682D616180003E06DE /* CosmoDetailView.swift in Sources */,
 				1452F1272D5E3FF6002E97FD /* MediaView.swift in Sources */,
 				14BC16D82D5DACCD00FF45A4 /* DateUtils.swift in Sources */,
 				14BC169A2D5D5D2C00FF45A4 /* CosmoView.swift in Sources */,
