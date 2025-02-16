@@ -11,7 +11,7 @@ struct CosmoModel: Codable, Identifiable {
     var id: String { date }
     let date: String
     let explanation: String
-    let mediaType: String
+    let mediaType: MediaType
     let serviceVersion: String
     let title: String
     let url: String
@@ -27,7 +27,7 @@ enum MediaType: String, Codable {
     case image
     case video
     case unknown
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         self = MediaType(rawValue: try container.decode(String.self)) ?? .unknown
@@ -38,7 +38,7 @@ extension CosmoModel {
     init(from useCaseModel: CosmoUseCaseModel) {
         self.date = useCaseModel.date
         self.explanation = useCaseModel.explanation
-        self.mediaType = useCaseModel.mediaType.rawValue
+        self.mediaType = MediaType(rawValue: useCaseModel.mediaType.rawValue) ?? .unknown
         self.serviceVersion = "V1"
         self.title = useCaseModel.title
         self.url = useCaseModel.mediaURL?.absoluteString ?? ""
