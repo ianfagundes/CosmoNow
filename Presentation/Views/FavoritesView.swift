@@ -29,10 +29,10 @@ struct FavoritesView: View {
                             }
                     }
 
-                    NavigationLink(destination: DetailFavoritesView(cosmo: cosmo, viewModel: viewModel)) {
+                    NavigationLink(destination: CosmoDetailView(cosmo: cosmo, favoritesViewModel: viewModel)) {
                         HStack(spacing: 16) {
-                            CachedAsyncImage(url: cosmo.url, width: 60, height: 60)
-                                .aspectRatio(contentMode: .fill)
+                            ThumbnailView(url: cosmo.url)
+                                .frame(width: 60, height: 60)
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                                 .background(Color.clear)
                                 .clipped()
