@@ -18,7 +18,7 @@ final class MockCosmoRepository: CosmoRepositoryProtocol {
         return CosmoModel(
             date: "2025-02-12",
             explanation: "Amostra de descrição.",
-            mediaType: "video",
+            mediaType: .video,
             serviceVersion: "v1",
             title: "Asteroid Bennu Holds the Building Blocks of Life",
             url: "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0"
