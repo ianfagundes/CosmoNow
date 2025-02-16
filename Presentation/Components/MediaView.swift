@@ -16,31 +16,34 @@ struct MediaView: View {
         if let url = mediaURL {
             switch mediaType {
             case .image:
-                AsyncImage(url: url) { image in
-                    image.resizable()
-                        .scaledToFit()
-                } placeholder: {
-                    ProgressView()
-                }
+                CachedAsyncImage(url: url.absoluteString, width: UIScreen.main.bounds.width - 64, height: 192)
+
             case .video:
                 if isYouTubeURL(url) {
-                    YouTubeWebView(videoURL: url)
-                        .frame(height: 300)
+                    CachedAsyncImage(
+                        url: YouTubeUtils.replaceInYoutubeURL(with: YouTubeUtils.extractYouTubeVideoID(from: url.absoluteString) ?? ""),
+                        width: UIScreen.main.bounds.width - 64,
+                        height: 192
+                    )
+                    .overlay(
+                        YouTubeWebView(videoURL: url)
+                            .frame(width: UIScreen.main.bounds.width - 64, height: 192)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    )
+                } else if url.isFileURL || url.absoluteString.hasSuffix(".mp4") {
+                    VideoPlayer(player: AVPlayer(url: url))
+                        .frame(height: 192)
                 } else {
-                    if url.isFileURL || url.absoluteString.hasSuffix(".mp4") {
-                        VideoPlayer(player: AVPlayer(url: url))
-                            .frame(height: 300)
-                    } else {
-                        Text("Formato de vídeo não suportado")
-                            .foregroundColor(.red)
-                    }
+                    Text("Formato de vídeo não suportado")
+                        .foregroundColor(.red)
                 }
+
             case .unknown:
                 Text("Mídia não suportada")
                     .foregroundColor(.gray)
             }
         } else {
-            Text("Mídia não disponivel")
+            Text("Mídia não disponível")
                 .foregroundColor(.gray)
         }
     }
