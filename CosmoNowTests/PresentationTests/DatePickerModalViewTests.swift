@@ -47,10 +47,8 @@ final class DatePickerModalViewTests: XCTestCase {
         let view = DatePickerModalView(viewModel: mockViewModel, selectedTab: .constant(1))
         let hostingController = UIHostingController(rootView: view)
 
-        // Simula o fetchCosmo
         await mockViewModel.fetchCosmo()
 
-        // Normaliza a data para comparação apenas por dia
         let calendar = Calendar.current
         let testDate = calendar.startOfDay(for: mockViewModel.selectedDate)
         let expectedDate = calendar.startOfDay(for: viewModel.selectedDate)
