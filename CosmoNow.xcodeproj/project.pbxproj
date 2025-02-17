@@ -45,6 +45,7 @@
 		148E2E602D632E2E00FDF486 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E2E5D2D632E1A00FDF486 /* ContentViewTests.swift */; };
 		148E2E632D632E5000FDF486 /* ContentViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E2E612D632E3E00FDF486 /* ContentViewUITests.swift */; };
 		148E2E652D63308A00FDF486 /* DatePickerModalViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E2E642D63308A00FDF486 /* DatePickerModalViewTests.swift */; };
+		148E2E732D63392800FDF486 /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148E2E722D63392800FDF486 /* NetworkErrorTests.swift */; };
 		14BC16932D5D5CF800FF45A4 /* CosmoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166E2D5D3DD600FF45A4 /* CosmoService.swift */; };
 		14BC16972D5D5D1900FF45A4 /* GetCosmoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166C2D5D3DA800FF45A4 /* GetCosmoUseCase.swift */; };
 		14BC16982D5D5D1F00FF45A4 /* CosmoRespositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC166B2D5D3CD600FF45A4 /* CosmoRespositoryProtocol.swift */; };
@@ -117,6 +118,7 @@
 		148E2E5D2D632E1A00FDF486 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		148E2E612D632E3E00FDF486 /* ContentViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewUITests.swift; sourceTree = "<group>"; };
 		148E2E642D63308A00FDF486 /* DatePickerModalViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerModalViewTests.swift; sourceTree = "<group>"; };
+		148E2E722D63392800FDF486 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
 		14BC16372D5D3B0200FF45A4 /* CosmoNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CosmoNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16472D5D3B0400FF45A4 /* CosmoNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC16512D5D3B0400FF45A4 /* CosmoNowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CosmoNowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,6 +225,7 @@
 				144423442D62814C00C309BB /* CosmoViewModelTests.swift */,
 				148E2E5D2D632E1A00FDF486 /* ContentViewTests.swift */,
 				148E2E642D63308A00FDF486 /* DatePickerModalViewTests.swift */,
+				148E2E722D63392800FDF486 /* NetworkErrorTests.swift */,
 			);
 			path = PresentationTests;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				148E2E652D63308A00FDF486 /* DatePickerModalViewTests.swift in Sources */,
+				148E2E732D63392800FDF486 /* NetworkErrorTests.swift in Sources */,
 				1419719E2D62ED9F002A1A48 /* NetworkManagerTests.swift in Sources */,
 				141971B02D62F9CA002A1A48 /* DateUtilsTests.swift in Sources */,
 				1444234B2D62814C00C309BB /* MockCosmoRepository.swift in Sources */,
