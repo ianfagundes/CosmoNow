@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "84A2B700-9292-4E94-9B2B-76567BF4AAF9",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:CosmoNow.xcodeproj",
+        "identifier" : "14BC16502D5D3B0400FF45A4",
+        "name" : "CosmoNowUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:CosmoNow.xcodeproj",
+        "identifier" : "14BC16462D5D3B0400FF45A4",
+        "name" : "CosmoNowTests"
+      }
+    }
+  ],
+  "version" : 1
+}

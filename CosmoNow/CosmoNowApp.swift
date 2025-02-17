@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct CosmoNowApp: App {
+    @State private var showLaunchScreen = true
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if showLaunchScreen {
+                LaunchScreenView()
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                showLaunchScreen = false
+                            }
+                        }
+                    }
+            } else {
+                ContentView()
+            }
         }
     }
 }
