@@ -4,6 +4,12 @@ CosmoNow
 
 CosmoNow é um aplicativo desenvolvido para explorar o universo, trazendo imagens, vídeos e informações sobre o espaço. O projeto foi criado com foco em uma arquitetura escalável, utilizando Clean Architecture, MVVM e princípios SOLID.
 
+![Simulator Screenshot - iPhone SE (3rd generation) - 2025-02-17 at 12 02 05](https://github.com/user-attachments/assets/e80d30f1-ac9d-4d65-a225-2400c2e36a82)
+![Simulator Screenshot - iPhone SE (3rd generation) - 2025-02-17 at 12 02 09](https://github.com/user-attachments/assets/0f765267-4613-4e2d-aade-9cf876eaf0f2)
+![Simulator Screenshot - iPhone SE (3rd generation) - 2025-02-17 at 12 02 36](https://github.com/user-attachments/assets/cb852775-a33b-4a16-8bb6-e5b351f30d41)
+![Simulator Screenshot - iPhone SE (3rd generation) - 2025-02-17 at 12 02 39](https://github.com/user-attachments/assets/2246dd29-ef13-408d-a771-6ce65714d9d2)
+![Simulator Screenshot - iPhone SE (3rd generation) - 2025-02-17 at 12 02 44](https://github.com/user-attachments/assets/f69c3e96-9697-487b-9504-ac98e154a127)
+
 🚀 Tecnologias Utilizadas
 
 SwiftUI: Para criação da interface responsiva e moderna.
@@ -56,129 +62,7 @@ Modo Escuro: Suporte a dark mode para melhor experiência visual.
 
 📂 Estrutura de Pastas
 
-📂 CosmoNow
-│── 📂 Assets.xcassets
-│   │── 📂 AppIcon.appiconset
-│   │   ├── 🖼️ 1024.png, 120.png, 180.png, etc.
-│   │   ├── 📄 Contents.json
-│   │── 📂 Images
-│   │   ├── 📂 cosmonow.imageset
-│   │   │   ├── 🖼️ cosmonow.png, cosmonow 1.png
-│   │   │   ├── 📄 Contents.json
-│   │── 📄 Contents.json
-│── 📄 ContentView.swift
-│── 📄 CosmoNowApp.swift
-│── 📂 Preview Content
-│   ├── 📂 Preview Assets.xcassets
-│   │   ├── 📄 Contents.json
-│
-├── 📂 Data
-│   ├── 📂 Protocols
-│   │   ├── 📄 CosmoRespositoryProtocol.swift
-│   │   ├── 📄 CosmoServiceProtocol.swift
-│   ├── 📂 Repositories
-│   │   ├── 📄 CosmoRepository.swift
-│   ├── 📂 Services
-│   │   ├── 📄 CosmoService.swift
-│
-├── 📂 Domain
-│   ├── 📂 Models
-│   │   ├── 📄 CosmoModel.swift
-│   ├── 📂 UseCases
-│   │   ├── 📄 CosmoUseCaseModel.swift
-│   │   ├── 📄 GetCosmoUseCase.swift
-│   │   ├── 📂 Protocols
-│   │   │   ├── 📄 GetCosmoUseCaseProtocol.swift
-│
-├── 📂 Infra
-│   ├── 📂 Cache
-│   │   ├── 📄 DataCacheManager.swift
-│   │   ├── 📄 ImageCacheManager.swift
-│   ├── 📂 Media
-│   │   ├── 📄 MediaManager.swift
-│   ├── 📂 Network
-│   │   ├── 📄 APIConfig.swift
-│   │   ├── 📄 NetworkError.swift
-│   │   ├── 📄 NetworkManager.swift
-│   │   ├── 📄 URLSessionProtocol.swift
-│   ├── 📂 Storage
-│   │   ├── 📄 FavoritesManager.swift
-│
-├── 📂 Presentation
-│   ├── 📂 Components
-│   │   ├── 📄 CachedAsyncImage.swift
-│   │   ├── 📄 DatePickerModalView.swift
-│   │   ├── 📄 FavoriteButton.swift
-│   │   ├── 📄 MediaView.swift
-│   │   ├── 📄 ThumbnailView.swift
-│   │   ├── 📄 YouTubeWebView.swift
-│   ├── 📂 ViewModels
-│   │   ├── 📄 CachedImageViewModel.swift
-│   │   ├── 📄 CosmoViewModel.swift
-│   │   ├── 📄 FavoritesViewModel.swift
-│   ├── 📂 Views
-│   │   ├── 📄 CosmoDetailView.swift
-│   │   ├── 📄 CosmoView.swift
-│   │   ├── 📄 FavoritesView.swift
-│   │   ├── 📄 MainTabView.swift
-│
-├── 📂 Resources
-│   ├── 📄 Info.plist
-│   ├── 📄 LaunchScreenView.swift
-│   ├── 📄 ThemeManager.swift
-│   ├── 📂 Utils
-│   │   ├── 📂 DateUtils
-│   │   │   ├── 📄 DateUtils.swift
-│   │   ├── 📂 Extensions
-│   │   │   ├── 📄 URL+Extensions.swift
-│   │   ├── 📂 Helpers
-│   │   │   ├── 📄 YouTubeUtils.swift
-│
-├── 📂 CosmoNowTests
-│   ├── 📄 CosmoNowTests.swift
-│   ├── 📂 DataTests
-│   │   ├── 📄 MockCosmoRepository.swift
-│   ├── 📄 DateUtilsTests.swift
-│   ├── 📂 DomainTests
-│   │   ├── 📄 GetCosmoUseCaseTests.swift
-│   ├── 📂 PresentationTests
-│   │   ├── 📄 ContentViewTests.swift
-│   │   ├── 📄 ContentViewUITests.swift
-│   │   ├── 📄 CosmoViewModelTests.swift
-│   │   ├── 📄 DatePickerModalViewTests.swift
-│   │   ├── 📄 NetworkErrorTests.swift
-│   ├── 📄 FavoriteButtonUITests.swift
-│   ├── 📄 FavoritesManagerTests.swift
-│   ├── 📄 FavoritesViewModelTests.swift
-│   ├── 📄 MockCosmoService.swift
-│   ├── 📄 NetworkManagerTests.swift
-│
-├── 📂 CosmoNowUITests
-│   ├── 📂 PresentationTests
-│
-├── 📄 CosmoNowUITests.xctestplan
-├── 📂 CosmoNow.xcodeproj
-│   ├── 📄 project.pbxproj
-│   ├── 📂 xcshareddata
-│   │   ├── 📂 xcschemes
-│   │   │   ├── 📄 CosmoNow.xcscheme
-│   │   │   ├── 📄 CosmoNowTests.xcscheme
-│   │   │   ├── 📄 CosmoNowUITests.xcscheme
-│   ├── 📂 xcuserdata
-│   │   ├── 📂 ianfagundes.xcuserdatad
-│   │   │   ├── 📂 xcdebugger
-│   │   │   ├── 📂 xcschemes
-│   │   │   │   ├── 📄 xcschememanagement.plist
-│
-├── 📂 CosmoNow.xcworkspace
-│   ├── 📂 xcshareddata
-│   │   ├── 📂 swiftpm
-│   │   │   ├── 📄 configuration
-│   ├── 📂 xcuserdata
-│   │   ├── 📂 ianfagundes.xcuserdatad
-│   │   │   ├── 📄 UserInterfaceState.xcuserstate
-│
-└── 📄 structure.txt
+![Shottr 2025-02-17 12 05 32](https://github.com/user-attachments/assets/63406f15-59f0-4f03-b31b-1d5d39f4a764)
 
 🔧 Como Rodar o Projeto
 
