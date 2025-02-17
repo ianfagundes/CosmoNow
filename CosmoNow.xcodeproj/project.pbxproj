@@ -15,6 +15,9 @@
 		141971AE2D62F6DD002A1A48 /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */; };
 		141971B02D62F9CA002A1A48 /* DateUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */; };
 		141971B22D62FB9D002A1A48 /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */; };
+		141971B82D62FD96002A1A48 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 141971B72D62FD96002A1A48 /* ViewInspector */; };
+		141971BA2D62FDB1002A1A48 /* FavoriteButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971B32D62FD6B002A1A48 /* FavoriteButtonUITests.swift */; };
+		141971BB2D62FF08002A1A48 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147DAFD92D5FA05B00FB30D6 /* FavoriteButton.swift */; };
 		141CABC72D5EAA8A005E02BC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CABC62D5EAA8A005E02BC /* MainTabView.swift */; };
 		141CABC92D5EAAEA005E02BC /* DatePickerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CABC82D5EAAEA005E02BC /* DatePickerModalView.swift */; };
 		141CABCD2D5ED75E005E02BC /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CABCC2D5ED75E005E02BC /* ThemeManager.swift */; };
@@ -81,6 +84,7 @@
 		141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
 		141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilsTests.swift; sourceTree = "<group>"; };
 		141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
+		141971B32D62FD6B002A1A48 /* FavoriteButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonUITests.swift; sourceTree = "<group>"; };
 		141CABC62D5EAA8A005E02BC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		141CABC82D5EAAEA005E02BC /* DatePickerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerModalView.swift; sourceTree = "<group>"; };
 		141CABCC2D5ED75E005E02BC /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141971B82D62FD96002A1A48 /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +230,7 @@
 				141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */,
 				141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */,
 				141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */,
+				141971B32D62FD6B002A1A48 /* FavoriteButtonUITests.swift */,
 			);
 			path = CosmoNowTests;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 			);
 			name = CosmoNowUITests;
 			packageProductDependencies = (
+				141971B72D62FD96002A1A48 /* ViewInspector */,
 			);
 			productName = CosmoNowUITests;
 			productReference = 14BC16512D5D3B0400FF45A4 /* CosmoNowUITests.xctest */;
@@ -525,6 +532,7 @@
 					};
 					14BC16502D5D3B0400FF45A4 = {
 						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
 						TestTargetID = 14BC16362D5D3B0200FF45A4;
 					};
 				};
@@ -538,6 +546,9 @@
 			);
 			mainGroup = 14BC162E2D5D3B0200FF45A4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				141971B62D62FD96002A1A48 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 14BC16382D5D3B0200FF45A4 /* Products */;
 			projectDirPath = "";
@@ -639,6 +650,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				141971BA2D62FDB1002A1A48 /* FavoriteButtonUITests.swift in Sources */,
+				141971BB2D62FF08002A1A48 /* FavoriteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +891,7 @@
 		14BC16622D5D3B0400FF45A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WDD8N4CRD3;
@@ -886,6 +900,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ianfagundes.CosmoNowUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = CosmoNow;
@@ -895,6 +910,7 @@
 		14BC16632D5D3B0400FF45A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WDD8N4CRD3;
@@ -949,6 +965,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		141971B62D62FD96002A1A48 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		141971B72D62FD96002A1A48 /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 141971B62D62FD96002A1A48 /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 14BC162F2D5D3B0200FF45A4 /* Project object */;
 }
