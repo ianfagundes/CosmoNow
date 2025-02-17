@@ -205,7 +205,11 @@
 		144423412D62814C00C309BB /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				144423472D62814C00C309BB /* MockCosmoService.swift */,
 				144423402D62814C00C309BB /* MockCosmoRepository.swift */,
+				141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */,
+				1419719D2D62ED9F002A1A48 /* NetworkManagerTests.swift */,
+				144423462D62814C00C309BB /* CosmoNowTests.swift */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -213,6 +217,8 @@
 		144423432D62814C00C309BB /* DomainTests */ = {
 			isa = PBXGroup;
 			children = (
+				148E2E722D63392800FDF486 /* NetworkErrorTests.swift */,
+				141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */,
 				144423422D62814C00C309BB /* GetCosmoUseCaseTests.swift */,
 			);
 			path = DomainTests;
@@ -221,11 +227,10 @@
 		144423452D62814C00C309BB /* PresentationTests */ = {
 			isa = PBXGroup;
 			children = (
-				148E2E612D632E3E00FDF486 /* ContentViewUITests.swift */,
-				144423442D62814C00C309BB /* CosmoViewModelTests.swift */,
+				14D57D892D6381ED0034B3BB /* UITests */,
+				14D57D8A2D6382000034B3BB /* ViewModelTests */,
 				148E2E5D2D632E1A00FDF486 /* ContentViewTests.swift */,
 				148E2E642D63308A00FDF486 /* DatePickerModalViewTests.swift */,
-				148E2E722D63392800FDF486 /* NetworkErrorTests.swift */,
 			);
 			path = PresentationTests;
 			sourceTree = "<group>";
@@ -236,13 +241,6 @@
 				144423412D62814C00C309BB /* DataTests */,
 				144423432D62814C00C309BB /* DomainTests */,
 				144423452D62814C00C309BB /* PresentationTests */,
-				144423462D62814C00C309BB /* CosmoNowTests.swift */,
-				144423472D62814C00C309BB /* MockCosmoService.swift */,
-				1419719D2D62ED9F002A1A48 /* NetworkManagerTests.swift */,
-				141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */,
-				141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */,
-				141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */,
-				141971B32D62FD6B002A1A48 /* FavoriteButtonUITests.swift */,
 			);
 			path = CosmoNowTests;
 			sourceTree = "<group>";
@@ -457,6 +455,24 @@
 				14BD60642D614CB7003E06DE /* YouTubeUtils.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		14D57D892D6381ED0034B3BB /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				141971B32D62FD6B002A1A48 /* FavoriteButtonUITests.swift */,
+				148E2E612D632E3E00FDF486 /* ContentViewUITests.swift */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		14D57D8A2D6382000034B3BB /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */,
+				144423442D62814C00C309BB /* CosmoViewModelTests.swift */,
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
