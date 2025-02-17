@@ -7,14 +7,23 @@
 
 import Foundation
 
-final class FavoritesManager {
+protocol FavoritesManaging {
+    func getFavorites() -> [CosmoModel]
+    func saveFavorite(_ item: CosmoModel)
+    func removeFavorite(_ item: CosmoModel)
+    func removeFavorites(_ ids: [String])
+}
+
+final class FavoritesManager: FavoritesManaging {
     static let shared = FavoritesManager()
     
     private let favoritesKey = "favoriteCosmos"
-    private let defaults = UserDefaults.standard
+    private let defaults: UserDefaults
 
-    private init() {}
-
+    init(userDefaults: UserDefaults = .standard) {
+        self.defaults = userDefaults
+    }
+    
     func saveFavorite(_ cosmo: CosmoModel) {
         var favorites = getFavorites()
         if !favorites.contains(where: { $0.date == cosmo.date }) {

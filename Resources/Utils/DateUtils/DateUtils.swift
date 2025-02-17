@@ -23,13 +23,16 @@ struct DateUtils {
     static func formatDate(_ dateString: String) -> String {
         let inputFormatter = DateFormatter()
         inputFormatter.dateFormat = "yyyy-MM-dd"
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX")
 
         let outputFormatter = DateFormatter()
         outputFormatter.dateStyle = .medium
-
+        outputFormatter.locale = Locale(identifier: "en_US")
+        
         if let date = inputFormatter.date(from: dateString) {
             return outputFormatter.string(from: date)
         }
         return dateString
     }
 }
+

@@ -12,9 +12,10 @@ import SwiftUI
 class FavoritesViewModel: ObservableObject {
     @Published var favorites: [CosmoModel] = []
     private var favoriteIds: Set<String> = []
-    let favoritesManager = FavoritesManager.shared
+    let favoritesManager: FavoritesManaging
 
-    init() {
+    init(favoritesManager: FavoritesManaging = FavoritesManager.shared) {
+        self.favoritesManager = favoritesManager
         loadFavorites()
     }
 

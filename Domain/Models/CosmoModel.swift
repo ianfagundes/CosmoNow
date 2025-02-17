@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CosmoModel: Codable, Identifiable {
+struct CosmoModel: Codable, Identifiable, Equatable {
     var id: String { date }
     let date: String
     let explanation: String

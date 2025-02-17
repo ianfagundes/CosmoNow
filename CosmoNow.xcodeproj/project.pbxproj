@@ -12,6 +12,9 @@
 		141971A42D62F009002A1A48 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971A02D62F009002A1A48 /* NetworkError.swift */; };
 		141971A52D62F009002A1A48 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971A12D62F009002A1A48 /* NetworkManager.swift */; };
 		141971A72D62F01A002A1A48 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971A62D62F01A002A1A48 /* URLSessionProtocol.swift */; };
+		141971AE2D62F6DD002A1A48 /* FavoritesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */; };
+		141971B02D62F9CA002A1A48 /* DateUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */; };
+		141971B22D62FB9D002A1A48 /* FavoritesManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */; };
 		141CABC72D5EAA8A005E02BC /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CABC62D5EAA8A005E02BC /* MainTabView.swift */; };
 		141CABC92D5EAAEA005E02BC /* DatePickerModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CABC82D5EAAEA005E02BC /* DatePickerModalView.swift */; };
 		141CABCD2D5ED75E005E02BC /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CABCC2D5ED75E005E02BC /* ThemeManager.swift */; };
@@ -75,6 +78,9 @@
 		141971A02D62F009002A1A48 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		141971A12D62F009002A1A48 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		141971A62D62F01A002A1A48 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModelTests.swift; sourceTree = "<group>"; };
+		141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilsTests.swift; sourceTree = "<group>"; };
+		141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesManagerTests.swift; sourceTree = "<group>"; };
 		141CABC62D5EAA8A005E02BC /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		141CABC82D5EAAEA005E02BC /* DatePickerModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerModalView.swift; sourceTree = "<group>"; };
 		141CABCC2D5ED75E005E02BC /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
@@ -216,6 +222,9 @@
 				144423462D62814C00C309BB /* CosmoNowTests.swift */,
 				144423472D62814C00C309BB /* MockCosmoService.swift */,
 				1419719D2D62ED9F002A1A48 /* NetworkManagerTests.swift */,
+				141971AD2D62F6DD002A1A48 /* FavoritesViewModelTests.swift */,
+				141971AF2D62F9CA002A1A48 /* DateUtilsTests.swift */,
+				141971B12D62FB9D002A1A48 /* FavoritesManagerTests.swift */,
 			);
 			path = CosmoNowTests;
 			sourceTree = "<group>";
@@ -615,11 +624,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1419719E2D62ED9F002A1A48 /* NetworkManagerTests.swift in Sources */,
+				141971B02D62F9CA002A1A48 /* DateUtilsTests.swift in Sources */,
 				1444234B2D62814C00C309BB /* MockCosmoRepository.swift in Sources */,
 				1444234C2D62814C00C309BB /* GetCosmoUseCaseTests.swift in Sources */,
+				141971B22D62FB9D002A1A48 /* FavoritesManagerTests.swift in Sources */,
 				1444234D2D62814C00C309BB /* CosmoViewModelTests.swift in Sources */,
 				1444234E2D62814C00C309BB /* CosmoNowTests.swift in Sources */,
 				1444234F2D62814C00C309BB /* MockCosmoService.swift in Sources */,
+				141971AE2D62F6DD002A1A48 /* FavoritesViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
