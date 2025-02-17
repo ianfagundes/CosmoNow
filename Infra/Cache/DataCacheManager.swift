@@ -7,7 +7,12 @@
 
 import Foundation
 
-final class DataCacheManager {
+protocol DataCacheManagerProtocol {
+    func getCachedData(for key: String) -> Data?
+    func saveData(_ data: Data, for key: String)
+}
+
+final class DataCacheManager: DataCacheManagerProtocol {
     static let shared = DataCacheManager()
     private let cache = URLCache.shared
     private let fileManager = FileManager.default

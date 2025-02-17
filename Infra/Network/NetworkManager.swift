@@ -9,9 +9,13 @@ import Foundation
 
 final class NetworkManager {
     static let shared = NetworkManager()
-    private let cacheManager = DataCacheManager.shared
+    private let cacheManager: DataCacheManagerProtocol
+    private let session: URLSessionProtocol
 
-    private init() {}
+    init(cacheManager: DataCacheManagerProtocol = DataCacheManager.shared, session: URLSessionProtocol = URLSession.shared) {
+        self.cacheManager = cacheManager
+        self.session = session
+    }
 
     func fetch<T: Codable>(url: URL, cacheKey: String) async throws -> T {
         if let cachedData = cacheManager.getCachedData(for: cacheKey) {
@@ -35,13 +39,13 @@ final class NetworkManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await session.data(for: request)
 
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw NetworkError.unknownError
             }
 
-            guard (200...299).contains(httpResponse.statusCode) else {
+            guard (200 ... 299).contains(httpResponse.statusCode) else {
                 throw NetworkError.badStatusCode(httpResponse.statusCode)
             }
 
@@ -57,7 +61,10 @@ final class NetworkManager {
 
         } catch let error as URLError {
             throw NetworkError.requestFailed(error)
+        } catch let error as NetworkError {
+            throw error
         } catch {
+            print("Erro desconhecido: \(error)")
             throw NetworkError.unknownError
         }
     }

@@ -18,7 +18,7 @@ final class MockCosmoService: CosmoServiceProtocol {
         return CosmoModel(
             date: "2025-02-12",
             explanation: "What can a space rock tell us about life on Earth?",
-            mediaType: "video",
+            mediaType: .video,
             serviceVersion: "v1",
             title: "Asteroid Bennu Holds the Building Blocks of Life",
             url: "https://www.youtube.com/embed/ukCSRYcjSQw?rel=0"
